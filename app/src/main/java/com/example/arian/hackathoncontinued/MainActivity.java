@@ -30,8 +30,8 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        String[] clubs = {"ACMW", "HES", "GES", "Cooking"};
-        String[] pictures ={"animal", "picture2", "picture3", "picture4"};
+        String[] clubs = {"A Cappella Alliance at Ohio State University", "A Kid Again at Ohio State", "Acacia Fraternity", "Academy of Managed Care Pharmacy"};
+
         // Replace the Array adapter with your custom adapter.
         // ListAdapter theListAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, foods);
         ListAdapter customListAdapter = new CustomAdapter(this, clubs);// Pass the clubs arrary to the constructor.

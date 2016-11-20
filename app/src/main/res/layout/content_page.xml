@@ -14,7 +14,7 @@
         android:layout_width="402dp"
         android:layout_height="201dp"
         android:layout_gravity="center"
-        android:src="@drawable/schedule" />
+        android:src="@drawable/acapella_1" />
 
     <Button
         android:layout_width="match_parent"
@@ -51,8 +51,8 @@
         android:layout_alignParentStart="true" />
 
     <TextView
-        android:text="clubName"
-        android:textSize="40dp"
+        android:text="A Cappella Alliance at Ohio State University"
+        android:textSize="20dp"
         android:textStyle="bold"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

@@ -56,9 +56,10 @@ public class PageAct extends AppCompatActivity {
     }
 
     public void createArray(ArrayList<String> clubs){
-        clubs.add("HES");
-        clubs.add("GES");
-        clubs.add("ACM-W");
+        clubs.add("A Cappella Alliance at Ohio State University");
+        clubs.add("A Kid Again at Ohio State");
+        clubs.add("Acacia Fraternity");
+        clubs.add("Academy of Managed Care Pharmacy");
     }
     /**
      * This method is called when the next button is clicked.
@@ -84,12 +85,15 @@ public class PageAct extends AppCompatActivity {
         quantityTextView.setText(clubs.get(pos));
         ImageView clubImageView = (ImageView) findViewById(R.id.schedule);
         if(pos == 0) {
-            clubImageView.setImageResource(R.drawable.picture2);
+            clubImageView.setImageResource(R.drawable.acapella_1);
         }else if(pos == 1){
-            clubImageView.setImageResource(R.drawable.picture3);
+            clubImageView.setImageResource(R.drawable.toyhorse_2);
         }
         else if(pos == 2) {
-            clubImageView.setImageResource(R.drawable.picture4);
+            clubImageView.setImageResource(R.drawable.friend_4);
+        }
+        else if(pos == 3) {
+            clubImageView.setImageResource(R.drawable.medicine_6);
         }
     }
 

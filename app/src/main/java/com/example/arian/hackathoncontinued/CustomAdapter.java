@@ -28,13 +28,13 @@ class CustomAdapter extends ArrayAdapter<String>{
         itemText.setText(singleClubItem);
         // using the same image every time
         if(position==0)
-            clubImage.setImageResource(R.drawable.animal);
+            clubImage.setImageResource(R.drawable.acapella_1);
         else if(position==1)
-            clubImage.setImageResource(R.drawable.picture2);
+            clubImage.setImageResource(R.drawable.toyhorse_2);
         else if(position==2)
-            clubImage.setImageResource(R.drawable.picture3);
-        else if(position==4)
-            clubImage.setImageResource(R.drawable.picture4);
+            clubImage.setImageResource(R.drawable.friend_4);
+        else if(position==3)
+            clubImage.setImageResource(R.drawable.medicine_6);
 
 
 
