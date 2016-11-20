@@ -24,19 +24,19 @@ import android.widget.Toast;
 import java.util.ArrayList;
 
 public class MainActivity extends Activity {
-
+    ArrayList<String> likes;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        String[] clubs = {"A Cappella Alliance at Ohio State University", "A Kid Again at Ohio State", "Acacia Fraternity", "Academy of Managed Care Pharmacy"};
-
+        String[] clubs = {"A Capella Alliance at Ohio State University", "A Kid Again at Ohio State", "Acacia Fraternity", "Academy of Managed Care Pharmacy"};
+        //listView = new ListView(MainActivity.this);
         // Replace the Array adapter with your custom adapter.
         // ListAdapter theListAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, foods);
         ListAdapter customListAdapter = new CustomAdapter(this, clubs);// Pass the clubs arrary to the constructor.
       //  ListAdapter customListAdapter2 = new CustomAdapter(this, pictures);// Pass the pictures arrary to the constructor.
-        ListView customListView = (ListView) findViewById(R.id.custom_ListView);
+        final ListView customListView = (ListView) findViewById(R.id.custom_ListView);
         customListView.setAdapter(customListAdapter);
         //customListView.setAdapter(customListAdapter2);
 
@@ -55,6 +55,25 @@ public class MainActivity extends Activity {
                     }
                 }
         );
+
+        customListView.setOnTouchListener(new OnSwipeTouchListener(MainActivity.this) {
+            public void onSwipeRight() {
+                Toast.makeText(MainActivity.this, "right", Toast.LENGTH_SHORT).show();
+                //listView = new ListView(MainActivity.this);
+                // Replace the Array adapter with your custom adapter.
+                String[] likes = {"A Capella Alliance at The Ohio State University"};
+                // ListAdapter theListAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, foods);
+                ListAdapter likedListAdapter = new CustomAdapter(MainActivity.this, likes);// Pass the clubs arrary to the constructor.
+                //  ListAdapter customListAdapter2 = new CustomAdapter(this, pictures);// Pass the pictures arrary to the constructor.
+                final ListView likeListAdapter = (ListView) findViewById(R.id.custom_ListView);
+                customListView.setAdapter(likedListAdapter);
+
+            }
+            public void onSwipeLeft(){
+                Toast.makeText(MainActivity.this, "left", Toast.LENGTH_SHORT).show();
+                MainActivity.this.onCreate(savedInstanceState);
+            }
+        });
     }
 
 
